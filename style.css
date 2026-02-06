@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    color: #2d9f8f;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.pricing-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pricing-box {
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-box:hover {
+    border-color: #2d9f8f;
+}
+
+.pricing-box.selected {
+    border-color: #2d9f8f;
+    background-color: #f0fdfa;
+}
+
+.pricing-box.expanded {
+    border-color: #2d9f8f;
+    background-color: #f0fdfa;
+}
+
+.radio-container {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+}
+
+.radio-container input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.radio-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d1d5db;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.radio-container input[type="radio"]:checked + label {
+    border-color: #2d9f8f;
+    background-color: #2d9f8f;
+}
+
+.radio-container input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.pricing-content {
+    margin-left: 40px;
+}
+
+.pricing-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.pair-count {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.popular-badge {
+    background-color: #2d9f8f;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.discount {
+    background-color: #ef4444;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.pricing-box.expanded .expanded-content {
+    max-height: 200px;
+}
+
+.size-color-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.label {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.selection-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.size-select,
+.color-select {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.size-select:focus,
+.color-select:focus {
+    outline: none;
+    border-color: #2d9f8f;
+}
+
+.shipping-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0 16px 0;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.shipping-text {
+    color: #2d9f8f;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.total {
+    font-weight: 700;
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.add-to-cart {
+    width: 100%;
+    background-color: #2d9f8f;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #0f766e;
+}
+
+.add-to-cart:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 0 10px;
+        padding: 20px;
+    }
+    
+    .pricing-content {
+        margin-left: 35px;
+    }
+}
